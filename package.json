@@ -3,6 +3,7 @@
   "unsafeName": "<Full Name>",
   "scriptName": "<Full Name> - UnderScript Plugin",
   "description": "<DESCRIPTION>",
+  "repository": "<REPO>",
   "version": "1.0.0",
   "license": "MIT",
   "homepage": "<REPO>",

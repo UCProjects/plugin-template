@@ -1,7 +1,7 @@
 /* eslint-env node */
 const path = require('path');
 const WebpackUserscript = require('webpack-userscript');
-const { name, scriptName, description } = require('./package.json');
+const { name, scriptName, description, repository } = require('./package.json');
 
 const dev = process.argv.includes('--dev');
 
@@ -21,8 +21,8 @@ module.exports = {
         namespace: 'https://uc.feildmaster.com/',
         match: 'https://*.undercards.net/*',
         exclude: 'https://*.undercards.net/*/*',
-        updateURL: `https://unpkg.com/${name}/dist/${name}.meta.js`,
-        downloadURL: `https://unpkg.com/${name}/dist/${name}.user.js`,
+        updateURL: `https://github.com/${repository}/releases/latest/download/${name}.meta.js`,
+        downloadURL: `https://github.com/${repository}/releases/latest/download/${name}.user.js`,
         require: [ // URLS of files to require
         ],
         grant: 'none',
