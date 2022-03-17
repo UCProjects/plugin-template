@@ -12,21 +12,22 @@ function setup() {
 function warn() {
   console.error(`${PLUGIN_NAME}: UnderScript required`);
 
-  const key = `${PLUGIN_NAME}.alerted`;
+  const key = 'underscript.required';
   if (sessionStorage.getItem(key)) return;
+  const message = "Looks like you don't have UnderScript installed, or you deactivated it! In order for plugins to work, you need to have it up and running. Until then, the features of this userscript will simply not work. Thank you for your understanding.";
 
   let alerted = true;
   if (window.SimpleToast) {
     SimpleToast({
       title: 'Missing Requirements',
-      text: 'UnderScript is required for this script to work',
+      text: message,
       footer: PLUGIN_NAME,
     });
   } else if (window.BootstrapDialog) {
     BootstrapDialog.show({
       title: 'Oh No!',
       type: BootstrapDialog.TYPE_WARNING,
-      message: 'UnderScript required',
+      message,
       buttons: [{
         label: 'Proceed',
         cssClass: 'btn-primary',
