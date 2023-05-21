@@ -17,7 +17,6 @@ module.exports = {
   globals: {
     BootstrapDialog: readonly,
     SimpleToast: readonly,
-    OBSWebSocket: readonly,
   },
   parserOptions: {
     sourceType: 'module',
