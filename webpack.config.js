@@ -24,6 +24,7 @@ module.exports = {
         updateURL: `https://github.com/${repository}/releases/latest/download/${name}.meta.js`,
         downloadURL: `https://github.com/${repository}/releases/latest/download/${name}.user.js`,
         require: [ // URLS of files to require
+          'https://raw.githubusercontent.com/UCProjects/UnderScript/master/src/checker.js',
         ],
         grant: 'none',
       },
