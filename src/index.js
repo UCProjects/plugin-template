@@ -1,7 +1,7 @@
-const PLUGIN_NAME = GM_info.name;
+const { name } = require('../package.json');
 
 const underscript = window.underscript;
-const plugin = underscript.plugin(PLUGIN_NAME, GM_info.version);
+const plugin = underscript.plugin(name, GM_info.version);
 
 plugin.events.on(':preload', () => {
   // Do stuff
