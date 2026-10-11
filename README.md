@@ -16,6 +16,8 @@ Make your own plugin for [UnderScript](https://github.com/UCProjects/UnderScript
 
 ## The quick way
 
+You can use the [Plugin Generator](https://feildmaster.github.io/UnderScript/generator) to fill in your plugin's name, description and author for you, and paste its result in place of the file in the third step.
+
 1. Install [UnderScript](https://feildmaster.github.io/UnderScript/) and a userscript manager like [Tampermonkey](https://www.tampermonkey.net/)
 1. In Chrome, Edge and Opera, let Tampermonkey run userscripts, or none of them will load. Right-click the Tampermonkey icon and choose "Manage extension". If there's an "Allow User Scripts" toggle, turn it on. If there isn't one, turn on "Developer mode" at the top right of `chrome://extensions` (`edge://extensions`, `opera://extensions`). If scripts stop running after you change either setting, turn "Allow User Scripts" off and on again
 1. Open [my-plugin.user.js](single-file/my-plugin.user.js) and copy everything in it
