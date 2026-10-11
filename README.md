@@ -2,6 +2,10 @@
 
 Make your own plugin for [UnderScript](https://github.com/UCProjects/UnderScript). You don't need to know how to program to get started.
 
+Prefer to be asked? The [command-line generator](https://github.com/UCProjects/Plugin-Generator) lets you set up a plugin by answering a few questions.
+
+Or use the [web generator](https://feildmaster.github.io/UnderScript/generator) to fill out basic details and get a plugin you can use in seconds.
+
 - [The quick way](#the-quick-way)
   - [Make it yours](#make-it-yours)
 - [Sharing your plugin](#sharing-your-plugin)
@@ -16,10 +20,12 @@ Make your own plugin for [UnderScript](https://github.com/UCProjects/UnderScript
 
 ## The quick way
 
-You can use the [Plugin Generator](https://feildmaster.github.io/UnderScript/generator) to fill in your plugin's name, description and author for you, and paste its result in place of the file in the third step.
-
 1. Install [UnderScript](https://feildmaster.github.io/UnderScript/) and a userscript manager like [Tampermonkey](https://www.tampermonkey.net/)
-1. In Chrome, Edge and Opera, let Tampermonkey run userscripts, or none of them will load. Right-click the Tampermonkey icon and choose "Manage extension". If there's an "Allow User Scripts" toggle, turn it on. If there isn't one, turn on "Developer mode" at the top right of `chrome://extensions` (`edge://extensions`, `opera://extensions`). If scripts stop running after you change either setting, turn "Allow User Scripts" off and on again
+1. In Chrome, Edge and Opera, let Tampermonkey run userscripts, or none of them will load:
+   - Right-click the Tampermonkey icon and choose "Manage extension"
+   - If there's an "Allow User Scripts" toggle, turn it on
+   - If there isn't one, turn on "Developer mode" at the top right of `chrome://extensions` (`edge://extensions`, `opera://extensions`)
+   - If scripts stop running after you change either setting, turn "Allow User Scripts" off and on again
 1. Open [my-plugin.user.js](single-file/my-plugin.user.js) and copy everything in it
 1. In Tampermonkey, create a new script and paste it over what's there, then save
 1. Reload [undercards](https://undercards.net/), you should see a "Hello from my plugin!" toast
@@ -66,6 +72,12 @@ UnderScript has a "Community Plugins" menu where players can find and install pl
 
 If you want a proper project, with a bundler, editor autocomplete and automatic releases, the project template is at the root of this repository. Click "Use this template" on GitHub to start your own copy.
 
+Or run the [command-line generator](https://github.com/UCProjects/Plugin-Generator), which turns a few questions into either a single script file or a full project and leaves out whatever you decline:
+
+```sh
+npx github:UCProjects/Plugin-Generator
+```
+
 ### Setup
 1. Install [Node.js](https://nodejs.org/) 24 (20.19 and 22.13 or newer also work)
 1. Edit [package.json](package.json): `name` (the file name), `displayName` (the plugin name, at most 20 characters of letters, numbers and spaces), `description`, `author`, `repository` (`owner/repo`) and `homepage`
@@ -88,16 +100,16 @@ Tampermonkey can load the file you build straight from your disk, so you don't h
 1. Allow Tampermonkey to access file URLs: in your browser's extensions page, open Tampermonkey's details and turn on "Allow access to file URLs"
 1. In Tampermonkey, create a new script and replace everything in it with the following, using the real path to your `dist` folder (on Windows it looks like `file:///C:/Users/you/my-plugin/dist/my-plugin.user.js`):
 
-```js
-// ==UserScript==
-// @name     My Plugin (dev)
-// @match    https://*.undercards.net/*
-// @exclude  https://*.undercards.net/*/*
-// @grant    none
-// @require  https://raw.githubusercontent.com/UCProjects/UnderScript/master/src/checkerV2.js
-// @require  file:///path/to/my-plugin/dist/my-plugin.user.js
-// ==/UserScript==
-```
+   ```js
+   // ==UserScript==
+   // @name     My Plugin (dev)
+   // @match    https://*.undercards.net/*
+   // @exclude  https://*.undercards.net/*/*
+   // @grant    none
+   // @require  https://raw.githubusercontent.com/UCProjects/UnderScript/master/src/checkerV2.js
+   // @require  file:///path/to/my-plugin/dist/my-plugin.user.js
+   // ==/UserScript==
+   ```
 
 1. Run `npm start`, then reload [undercards](https://undercards.net/) whenever it has rebuilt
 
