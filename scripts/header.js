@@ -20,7 +20,7 @@ export function header(pkg) {
   const tags = {
     namespace: [repository && `https://github.com/${repository.split('/')[0]}`],
     match: ['https://*.undercards.net/*'],
-    exclude: ['https://*.undercards.net/*/*'],
+    exclude: ['https://*undercards.net/*/*'],
     require: ['https://raw.githubusercontent.com/UCProjects/UnderScript/master/src/checkerV2.js'],
     updateURL: [release && `${release}.meta.js`],
     downloadURL: [release && `${release}.user.js`],

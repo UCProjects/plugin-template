@@ -104,7 +104,7 @@ Tampermonkey can load the file you build straight from your disk, so you don't h
    // ==UserScript==
    // @name     My Plugin (dev)
    // @match    https://*.undercards.net/*
-   // @exclude  https://*.undercards.net/*/*
+   // @exclude  https://*undercards.net/*/*
    // @grant    none
    // @require  https://raw.githubusercontent.com/UCProjects/UnderScript/master/src/checkerV2.js
    // @require  file:///path/to/my-plugin/dist/my-plugin.user.js

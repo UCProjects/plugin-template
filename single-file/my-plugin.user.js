@@ -5,7 +5,7 @@
 // @version      1.0.0
 // @author       YOUR NAME
 // @match        https://*.undercards.net/*
-// @exclude      https://*.undercards.net/*/*
+// @exclude      https://*undercards.net/*/*
 // @require      https://raw.githubusercontent.com/UCProjects/UnderScript/master/src/checkerV2.js
 // @grant        none
 // ==/UserScript==
